@@ -27,9 +27,9 @@ namespace ProbaVizsga.Models
         protected Vehicle(string vehicle)
         {
             string[] line = vehicle.Split(';');
-            ID = line[0].Trim();
-            Registered = int.Parse(line[1].Trim());
-            Gas = (EGas)int.Parse(line[2].Trim());
+            ID = line[1].Trim();
+            Registered = int.Parse(line[2].Trim());
+            Gas = (EGas)int.Parse(line[3].Trim());
         }
 
         public string ID { get; set; }

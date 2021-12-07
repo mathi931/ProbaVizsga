@@ -37,6 +37,9 @@ namespace ProbaVizsga
             this.btnAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cmbGas = new System.Windows.Forms.ComboBox();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.lsbVehicles = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numRegistered)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,10 +129,24 @@ namespace ProbaVizsga
             this.cmbGas.Size = new System.Drawing.Size(121, 28);
             this.cmbGas.TabIndex = 8;
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // lsbVehicles
+            // 
+            this.lsbVehicles.FormattingEnabled = true;
+            this.lsbVehicles.ItemHeight = 20;
+            this.lsbVehicles.Location = new System.Drawing.Point(260, 12);
+            this.lsbVehicles.Name = "lsbVehicles";
+            this.lsbVehicles.Size = new System.Drawing.Size(394, 304);
+            this.lsbVehicles.TabIndex = 10;
+            // 
             // Index
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(666, 390);
+            this.Controls.Add(this.lsbVehicles);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbGas);
             this.Controls.Add(this.btnAdd);
@@ -144,6 +161,8 @@ namespace ProbaVizsga
             this.Name = "Index";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Index";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Index_FormClosing);
+            this.Load += new System.EventHandler(this.Index_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numRegistered)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,5 +178,8 @@ namespace ProbaVizsga
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbGas;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ListBox lsbVehicles;
     }
 }

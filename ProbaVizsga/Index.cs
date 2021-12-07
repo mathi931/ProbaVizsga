@@ -14,6 +14,9 @@ namespace ProbaVizsga
 {
     public partial class Index : Form
     {
+
+        List<Vehicle> vehicles = new List<Vehicle>();
+
         public Index()
         {
             InitializeComponent();
@@ -27,15 +30,19 @@ namespace ProbaVizsga
             {
                 case ESwitch.Choose:
                     break;
+
                     //create a new Bus
                 case ESwitch.Bus:
                     Bus bus = new Bus(cbExtra.Checked, new IDGenerator().GenerateID(ESwitch.Bus),(int)numRegistered.Value, (EGas)cmbGas.SelectedItem);
-                    MessageBox.Show(bus.ToString());
+                    vehicles.Add(bus);
+                    refreshList();
                     break;
+
                     //create a new Auto
                 case ESwitch.Auto:
                     Car car = new Car(cbExtra.Checked, new IDGenerator().GenerateID(ESwitch.Auto), (int)numRegistered.Value, (EGas)cmbGas.SelectedItem);
-                    MessageBox.Show(car.ToString());
+                    vehicles.Add(car);
+                    refreshList();
                     break;
                 default:
                     break;
@@ -62,6 +69,55 @@ namespace ProbaVizsga
                     break;
             }
 
+        }
+
+        private void Index_Load(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Do you want to import files ?", "Import", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        vehicles = new DataAccess().ImportVehicles(openFileDialog.FileName);
+                        refreshList();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error during Import", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Close();
+                    }
+                }
+            }
+        }
+
+        private void Index_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("are you sure to exit ?", "exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                if(saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        new DataAccess().ExportVehicles(saveFileDialog.FileName, vehicles);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error during Export!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Cancel = true;
+                    }
+                }
+            }
+        }
+
+        private void refreshList()
+        {
+            lsbVehicles.DataSource = null;
+            lsbVehicles.DataSource = vehicles;
         }
     }
 }

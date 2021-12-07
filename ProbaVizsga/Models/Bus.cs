@@ -18,7 +18,7 @@ namespace ProbaVizsga.Models
         public Bus(string vehicle) : base(vehicle)
         {
             string[] line = vehicle.Split(';');
-            DoubleLong = bool.Parse(line[3].Trim());
+            DoubleLong = bool.Parse(line[4].Trim());
         }
 
         public override string ToCSV()

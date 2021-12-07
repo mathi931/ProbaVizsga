@@ -26,7 +26,7 @@ namespace ProbaVizsga.Methods
                     return $"BUS-{SerialNo}";
 
                 case ESwitch.Auto:
-                    return $"AUTO-{SerialNo}";
+                    return $"CAR-{SerialNo}";
                 default:
                     return null;
             }

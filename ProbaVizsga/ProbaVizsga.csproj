@@ -52,8 +52,9 @@
     <Compile Include="Index.Designer.cs">
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
+    <Compile Include="Methods\DataAccess.cs" />
     <Compile Include="Methods\IDGenerator.cs" />
-    <Compile Include="Models\Auto.cs" />
+    <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Bus.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Vehicle.cs" />

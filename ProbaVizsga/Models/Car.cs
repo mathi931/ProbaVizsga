@@ -18,13 +18,13 @@ namespace ProbaVizsga.Models
         public Car(string vehicle): base(vehicle)
         {
             string[] line = vehicle.Split(';');
-            SportLine = bool.Parse(line[3].Trim());
+            SportLine = bool.Parse(line[4].Trim());
         }
 
         //BUSZ;BUSZ001;2021;0;True
         public override string ToCSV()
         {
-            return $"AUTO;{base.ToCSV()};{SportLine}";
+            return $"CAR;{base.ToCSV()};{SportLine}";
         }
 
         public override string ToString()
