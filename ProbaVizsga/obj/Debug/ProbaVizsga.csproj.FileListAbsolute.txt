@@ -1,0 +1,10 @@
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\bin\Debug\ProbaVizsga.exe.config
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\bin\Debug\ProbaVizsga.exe
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\bin\Debug\ProbaVizsga.pdb
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\obj\Debug\ProbaVizsga.csproj.AssemblyReference.cache
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\obj\Debug\ProbaVizsga.Index.resources
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\obj\Debug\ProbaVizsga.Properties.Resources.resources
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\obj\Debug\ProbaVizsga.csproj.GenerateResource.cache
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\obj\Debug\ProbaVizsga.csproj.CoreCompileInputs.cache
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\obj\Debug\ProbaVizsga.exe
+C:\Users\Meszi\source\repos\ProbaVizsga\ProbaVizsga\obj\Debug\ProbaVizsga.pdb
